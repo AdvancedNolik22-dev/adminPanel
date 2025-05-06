@@ -1,0 +1,813 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "plan": "enterprise",
+      "status": "active",
+      "createdAt": "2023-01-15T10:30:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+        "company": "Tech Solutions Ltd",
+        "role": "CTO",
+        "location": "New York, USA",
+        "phone": "+1 (555) 123-4567"
+      },
+      "subscription": {
+        "plan": "enterprise",
+        "startDate": "2023-01-25T16:40:00Z",
+        "endDate": "2023-07-25T16:40:00Z",
+        "paymentMethod": "credit_card",
+        "amount": 49.99,
+        "billingCycle": "monthly",
+        "autoRenew": false
+      },
+      "onboardingId": "onb_1"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "plan": "basic",
+      "status": "active",
+      "createdAt": "2023-02-20T14:15:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+        "company": "Design Masters Inc",
+        "role": "Designer",
+        "location": "San Francisco, USA",
+        "phone": "+1 (555) 987-6543"
+      },
+      "subscription": {
+        "plan": "pro"
+      },
+      "onboardingId": "onb_2"
+    },
+    {
+      "id": "3",
+      "name": "Robert Johnson",
+      "email": "robert.johnson@example.com",
+      "plan": "pro",
+      "status": "active",
+      "createdAt": "2023-03-10T09:45:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+        "company": "Enterprise Corp",
+        "role": "CEO",
+        "location": "Chicago, USA",
+        "phone": "+1 (555) 234-5678"
+      },
+      "subscription": {
+        "plan": "pro"
+      },
+      "onboardingId": "onb_3"
+    },
+    {
+      "id": "4",
+      "name": "Sarah Williams",
+      "email": "sarah.williams@example.com",
+      "plan": "basic",
+      "status": "pending",
+      "createdAt": "2023-04-05T11:20:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/women/4.jpg",
+        "company": "Freelance",
+        "role": "Writer",
+        "location": "Austin, USA",
+        "phone": "+1 (555) 876-5432"
+      },
+      "subscription": {
+        "plan": "basic",
+        "startDate": "2023-01-25T16:40:00Z",
+        "endDate": "2023-07-25T16:40:00Z",
+        "paymentMethod": "credit_card",
+        "amount": 49.99,
+        "billingCycle": "monthly",
+        "autoRenew": false
+      },
+      "onboardingId": "onb_4"
+    },
+    {
+      "id": "5",
+      "name": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "plan": "basic",
+      "status": "inactive",
+      "createdAt": "2023-01-25T16:40:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+        "company": "Brown Consulting",
+        "role": "Consultant",
+        "location": "Boston, USA",
+        "phone": "+1 (555) 345-6789"
+      },
+      "subscription": {
+        "plan": "basic",
+        "startDate": "2023-01-25T16:40:00Z",
+        "endDate": "2023-07-25T16:40:00Z",
+        "paymentMethod": "credit_card",
+        "amount": 49.99,
+        "billingCycle": "monthly",
+        "autoRenew": false
+      },
+      "onboardingId": "onb_5"
+    },
+    {
+      "id": "6",
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "plan": "enterprise",
+      "status": "active",
+      "createdAt": "2023-05-12T08:25:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/women/6.jpg",
+        "company": "Global Tech Inc",
+        "role": "Product Manager",
+        "location": "Toronto, Canada",
+        "phone": "+1 (555) 456-7890"
+      },
+      "subscription": {
+        "plan": "enterprise",
+        "startDate": "2023-05-12T08:25:00Z",
+        "endDate": "2024-05-12T08:25:00Z",
+        "paymentMethod": "credit_card",
+        "amount": 199.99,
+        "billingCycle": "yearly",
+        "autoRenew": true
+      },
+      "onboardingId": "onb_6"
+    },
+    {
+      "id": "7",
+      "name": "David Wilson",
+      "email": "david.wilson@example.com",
+      "plan": "basic",
+      "status": "pending",
+      "createdAt": "2023-06-03T13:10:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/7.jpg",
+        "company": "Wilson Marketing",
+        "role": "Marketing Specialist",
+        "location": "Seattle, USA",
+        "phone": "+1 (555) 567-8901"
+      },
+      "subscription": {
+        "plan": "basic",
+        "startDate": "2023-06-03T13:10:00Z",
+        "endDate": "2023-09-03T13:10:00Z",
+        "paymentMethod": "paypal",
+        "amount": 19.99,
+        "billingCycle": "monthly",
+        "autoRenew": true
+      },
+      "onboardingId": "onb_7"
+    },
+    {
+      "id": "8",
+      "name": "Lisa Thompson",
+      "email": "lisa.thompson@example.com",
+      "plan": "pro",
+      "status": "active",
+      "createdAt": "2023-07-20T15:45:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/women/8.jpg",
+        "company": "Creative Studios LLC",
+        "role": "Creative Director",
+        "location": "Los Angeles, USA",
+        "phone": "+1 (555) 678-9012"
+      },
+      "subscription": {
+        "plan": "pro",
+        "startDate": "2023-07-20T15:45:00Z",
+        "endDate": "2024-07-20T15:45:00Z",
+        "paymentMethod": "credit_card",
+        "amount": 49.99,
+        "billingCycle": "monthly",
+        "autoRenew": true
+      },
+      "onboardingId": "onb_8"
+    },
+    {
+      "id": "9",
+      "name": "James Martin",
+      "email": "james.martin@example.com",
+      "plan": "enterprise",
+      "status": "inactive",
+      "createdAt": "2023-02-15T10:20:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/9.jpg",
+        "company": "Martin Enterprises",
+        "role": "CEO",
+        "location": "London, UK",
+        "phone": "+44 (0) 1234 567890"
+      },
+      "subscription": {
+        "plan": "enterprise",
+        "startDate": "2023-02-15T10:20:00Z",
+        "endDate": "2023-08-15T10:20:00Z",
+        "paymentMethod": "wire_transfer",
+        "amount": 199.99,
+        "billingCycle": "yearly",
+        "autoRenew": false
+      },
+      "onboardingId": "onb_9"
+    },
+    {
+      "id": "10",
+      "name": "Emma Clark",
+      "email": "emma.clark@example.com",
+      "plan": "basic",
+      "status": "active",
+      "createdAt": "2023-08-07T09:35:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/women/10.jpg",
+        "company": "Clark Design Co",
+        "role": "UI/UX Designer",
+        "location": "Berlin, Germany",
+        "phone": "+49 (0) 123 456789"
+      },
+      "subscription": {
+        "plan": "basic",
+        "startDate": "2023-08-07T09:35:00Z",
+        "endDate": "2024-08-07T09:35:00Z",
+        "paymentMethod": "paypal",
+        "amount": 19.99,
+        "billingCycle": "monthly",
+        "autoRenew": true
+      },
+      "onboardingId": "onb_10"
+    },
+    {
+      "id": "11",
+      "name": "Alexander Lee",
+      "email": "alexander.lee@example.com",
+      "plan": "pro",
+      "status": "pending",
+      "createdAt": "2023-09-12T14:55:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/11.jpg",
+        "company": "Lee Technologies",
+        "role": "Software Engineer",
+        "location": "Sydney, Australia",
+        "phone": "+61 (0) 2 3456 7890"
+      },
+      "subscription": {
+        "plan": "pro"
+      },
+      "onboardingId": "onb_11"
+    },
+    {
+      "id": "12",
+      "name": "Olivia Rodriguez",
+      "email": "olivia.rodriguez@example.com",
+      "plan": "enterprise",
+      "status": "active",
+      "createdAt": "2023-04-28T11:15:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+        "company": "Global Innovations Inc",
+        "role": "CTO",
+        "location": "Madrid, Spain",
+        "phone": "+34 (123) 456 789"
+      },
+      "subscription": {
+        "plan": "enterprise",
+        "startDate": "2023-04-28T11:15:00Z",
+        "endDate": "2024-04-28T11:15:00Z",
+        "paymentMethod": "credit_card",
+        "amount": 199.99,
+        "billingCycle": "yearly",
+        "autoRenew": true
+      },
+      "onboardingId": "onb_12"
+    },
+    {
+      "id": "13",
+      "name": "Noah Campbell",
+      "email": "noah.campbell@example.com",
+      "plan": "basic",
+      "status": "inactive",
+      "createdAt": "2023-03-05T16:30:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
+        "company": "Campbell Media Group",
+        "role": "Content Creator",
+        "location": "Dublin, Ireland",
+        "phone": "+353 (0) 1 234 5678"
+      },
+      "subscription": {
+        "plan": "basic",
+        "startDate": "2023-03-05T16:30:00Z",
+        "endDate": "2023-09-05T16:30:00Z",
+        "paymentMethod": "paypal",
+        "amount": 19.99,
+        "billingCycle": "quarterly",
+        "autoRenew": false
+      },
+      "onboardingId": "onb_13"
+    },
+    {
+      "id": "14",
+      "name": "Sophia Martinez",
+      "email": "sophia.martinez@example.com",
+      "plan": "pro",
+      "status": "active",
+      "createdAt": "2023-07-14T09:40:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/women/14.jpg",
+        "company": "Digital Solutions Co",
+        "role": "Digital Marketer",
+        "location": "Mexico City, Mexico",
+        "phone": "+52 (55) 1234 5678"
+      },
+      "subscription": {
+        "plan": "pro",
+        "startDate": "2023-07-14T09:40:00Z",
+        "endDate": "2024-01-14T09:40:00Z",
+        "paymentMethod": "credit_card",
+        "amount": 49.99,
+        "billingCycle": "monthly",
+        "autoRenew": true
+      },
+      "onboardingId": "onb_14"
+    },
+    {
+      "id": "15",
+      "name": "Ethan Taylor",
+      "email": "ethan.taylor@example.com",
+      "plan": "enterprise",
+      "status": "pending",
+      "createdAt": "2023-10-01T14:20:00Z",
+      "profile": {
+        "avatar": "https://randomuser.me/api/portraits/men/15.jpg",
+        "company": "Taylor Enterprises Ltd",
+        "role": "Managing Director",
+        "location": "Singapore",
+        "phone": "+65 9123 4567"
+      },
+      "subscription": {
+        "plan": "enterprise",
+        "startDate": "2023-10-01T14:20:00Z",
+        "endDate": "2024-10-01T14:20:00Z",
+        "paymentMethod": "wire_transfer",
+        "amount": 199.99,
+        "billingCycle": "yearly",
+        "autoRenew": true
+      },
+      "onboardingId": "onb_15"
+    }
+  ],
+  "onboarding": [
+    {
+      "id": "onb_1",
+      "userId": "1",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": true
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_2",
+      "userId": "2",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_3",
+      "userId": "3",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_4",
+      "userId": "4",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": false
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": false
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_5",
+      "userId": "5",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_6",
+      "userId": "6",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": true
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_7",
+      "userId": "7",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": false
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_8",
+      "userId": "8",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": true
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "onb_9",
+      "userId": "9",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": false
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_10",
+      "userId": "10",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_11",
+      "userId": "11",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": true
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "id": "onb_12",
+      "userId": "12",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": true
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": true
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_13",
+      "userId": "13",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": false
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_14",
+      "userId": "14",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": false
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": false
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "onb_15",
+      "userId": "15",
+      "steps": [
+        {
+          "id": "step_1",
+          "title": "Complete Profile",
+          "description": "Fill in all your profile information",
+          "completed": true
+        },
+        {
+          "id": "step_2",
+          "title": "Connect Data Sources",
+          "description": "Link your existing data sources",
+          "completed": false
+        },
+        {
+          "id": "step_3",
+          "title": "Invite Team Members",
+          "description": "Add your team to the platform",
+          "completed": false
+        },
+        {
+          "id": "step_4",
+          "title": "Set Up Integrations",
+          "description": "Connect third-party services",
+          "completed": false
+        }
+      ]
+    }
+  ]
+}
