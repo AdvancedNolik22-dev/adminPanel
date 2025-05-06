@@ -73,7 +73,10 @@ export async function updateSubscription(userId: string, subscription: Partial<U
   const user = await getUserById(userId);
   
   // Create update payload with both fields
-  const updateData: any = { 
+  const updateData: { 
+    subscription: User['subscription'];
+    plan?: string;
+  } = { 
     subscription: { ...user.subscription, ...subscription } 
   };
   

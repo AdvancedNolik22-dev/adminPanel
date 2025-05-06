@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { getOnboarding, updateSubscription, updateOnboardingStep } from '@/lib/api';
 import { User, Onboarding } from "@/types/user";
 import { TabType } from '../components/customers/drawer/tabs';
@@ -12,21 +12,9 @@ export function useCustomerDrawer(customer: User, onUpdate: () => void, onClose:
   const [updatingSubscription, setUpdatingSubscription] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(customer.subscription.plan);
   const [isClosing, setIsClosing] = useState(false);
+  const animationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    setActiveTab('profile');
-    
-    if (customer && customer.onboardingId) {
-      fetchOnboardingData();
-    }
-    
-    // Reset selected plan when customer changes
-    if (customer) {
-      setSelectedPlan(customer.subscription.plan);
-    }
-  }, [customer]);
-
-  const fetchOnboardingData = async () => {
+  const fetchOnboardingData = useCallback(async () => {
     if (!customer.onboardingId) return;
 
     setLoading(true);
@@ -38,7 +26,32 @@ export function useCustomerDrawer(customer: User, onUpdate: () => void, onClose:
     } finally {
       setLoading(false);
     }
-  };
+  }, [customer.onboardingId]);
+
+  useEffect(() => {
+    // Clear any existing animation timeouts when customer changes
+    if (animationTimeoutRef.current) {
+      clearTimeout(animationTimeoutRef.current);
+    }
+    
+    setActiveTab('profile');
+    
+    if (customer && customer.onboardingId) {
+      fetchOnboardingData();
+    }
+    
+    // Reset selected plan when customer changes
+    if (customer) {
+      setSelectedPlan(customer.subscription.plan);
+    }
+
+    // Cleanup timeout when component unmounts or customer changes
+    return () => {
+      if (animationTimeoutRef.current) {
+        clearTimeout(animationTimeoutRef.current);
+      }
+    };
+  }, [customer, fetchOnboardingData]);
 
   const handleTabChange = (tab: TabType) => {
     setActiveTab(tab);
@@ -96,8 +109,14 @@ export function useCustomerDrawer(customer: User, onUpdate: () => void, onClose:
 
   const handleCloseWithAnimation = () => {
     setIsClosing(true);
-    setTimeout(() => {
+    
+    if (animationTimeoutRef.current) {
+      clearTimeout(animationTimeoutRef.current);
+    }
+    
+    animationTimeoutRef.current = setTimeout(() => {
       onClose();
+      setIsClosing(false);
     }, 280);
   };
 

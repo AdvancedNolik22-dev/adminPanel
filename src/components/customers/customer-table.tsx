@@ -1,7 +1,7 @@
 'use client';
 import { User } from '@/types/user';
 import { getStatusColor, getPlanColor, getPlanLabel } from '@/utils/functions';
-
+import Image from 'next/image';
 interface CustomerTableProps {
   customers: User[];
   onCustomerClick: (customer: User) => void;
@@ -53,11 +53,13 @@ export function CustomerTable({ customers, onCustomerClick, selectedCustomer }: 
                 >
                   <td className="whitespace-nowrap">
                     <div className="flex flex-row items-center gap-[16px] ml-[4px]">
-                      <div className="flex-shrink-0 h-10 w-10">
-                        <img
-                          className="h-[40px] w-[40px] rounded-full object-cover"
+                      <div className="flex-shrink-0 h-[40px] w-[40px] relative">
+                        <Image
+                          className="rounded-full object-cover"
                           src={customer.profile.avatar}
                           alt={customer.name}
+                          fill
+                          sizes="40px"
                         />
                       </div>
                       <div className="flex flex-col gap-[4px]">

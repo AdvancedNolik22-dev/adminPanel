@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { CustomerTable } from '@/components/customers/customer-table';
 import { CustomerFilter } from '@/components/customers/customer-filter';
 import { Pagination } from '@/components/ui/pagination';
@@ -13,38 +13,38 @@ export default function CustomersPage() {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [totalCount, setTotalCount] = useState(0);
+  // const [totalCount, setTotalCount] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [selectedCustomer, setSelectedCustomer] = useState<User | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function fetchCustomers() {
+  const fetchCustomers = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
       const data = await getUsers(currentPage, 5, searchTerm, statusFilter);
       setCustomers(data.users);
       setTotalPages(data.totalPages);
-      setTotalCount(data.totalCount);
+      // setTotalCount(data.totalCount);
     } catch (error) {
       console.error('Error fetching customers:', error);
       setError('Failed to load customers. Please try again later.');
     } finally {
       setLoading(false);
     }
-  }
+  }, [currentPage, searchTerm, statusFilter]);
 
-  // Separate effect for page changes to avoid recursion
+  // Separate effect for page changes
   useEffect(() => {
     fetchCustomers();
-  }, [currentPage]);
+  }, [fetchCustomers]);
   
   // Separate effect for search/filter changes
   useEffect(() => {
     setCurrentPage(1); // Reset to first page when search or filter changes
-    fetchCustomers();
+    // fetchCustomers will be called by the other useEffect when currentPage changes
   }, [searchTerm, statusFilter]);
 
   const handleCustomerClick = (customer: User) => {

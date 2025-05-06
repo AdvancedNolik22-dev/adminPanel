@@ -1,6 +1,7 @@
 'use client';
 
 import { User } from "@/types/user";
+import Image from "next/image";
 
 interface CustomerHeaderProps {
   customer: User;
@@ -9,11 +10,14 @@ interface CustomerHeaderProps {
 export function CustomerHeader({ customer }: CustomerHeaderProps) {
   return (
     <div className="flex flex-row w-full items-center mb-[16px] pb-[16px] border-b border-[#E5E7EB]">
-      <div className="flex-shrink-0">
-        <img
-          className="h-[48px] w-[48px] rounded-full"
+      <div className="flex-shrink-0 relative h-[48px] w-[48px]">
+        <Image
+          className="rounded-full"
           src={customer.profile.avatar}
           alt={customer.name}
+          fill
+          sizes="48px"
+          priority
         />
       </div>
       <div className="flex flex-col gap-[8px] ml-[12px]">

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Header } from '@/components/header';
 
 export default function HomePage() {
   return (
@@ -16,7 +15,7 @@ export default function HomePage() {
               </p>
               <Link 
                 href="/customers" 
-                className="inline-flex   rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow hover:opacity-90"
+                className="inline-flex rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow hover:opacity-90"
               >
                 View Customers
               </Link>

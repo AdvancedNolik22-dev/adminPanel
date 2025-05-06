@@ -8,6 +8,7 @@ import { Tabs } from './drawer/tabs';
 import { CustomerProfile } from './drawer/customer-profile';
 import { CustomerSubscription } from './drawer/customer-subscription';
 import { CustomerOnboarding } from './drawer/customer-onboarding';
+import { useEffect, useState } from 'react';
 
 interface CustomerDrawerProps {
   customer: User;
@@ -22,6 +23,23 @@ export function CustomerDrawer({
   onClose,
   onUpdate,
 }: CustomerDrawerProps) {
+  // Start with translated state (off-screen)
+  const [isAnimating, setIsAnimating] = useState(false);
+  
+  useEffect(() => {
+    if (isOpen) {
+      // When drawer opens, start in translated state
+      setIsAnimating(true);
+      
+      // Then after a brief delay, animate to visible
+      const timer = setTimeout(() => {
+        setIsAnimating(false);
+      }, 5);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+  
   const {
     activeTab,
     onboardingData,
@@ -36,13 +54,21 @@ export function CustomerDrawer({
   } = useCustomerDrawer(customer, onUpdate, onClose);
 
   if (!isOpen && !isClosing) return null;
-  
-  const translateClass = isClosing ? 'translate-x-[100%]' : 'translate-x-0';
+
+  // When closing or first rendering, keep drawer translated (off-screen)
+  // Otherwise, show it normally
+  const translateClass = isClosing || isAnimating 
+    ? 'translate-x-[100%]' 
+    : 'translate-x-0';
 
   return (
     <>
       <div 
-        className={`fixed inset-0 bg-[#000000] transition-opacity duration-300 z-40 ${isClosing ? 'opacity-0 bg-opacity-0' : 'opacity-50 bg-opacity-50'}`}
+        className={`fixed inset-0 bg-[#000000] transition-opacity duration-300 z-40 ${
+          isClosing || isAnimating
+            ? 'opacity-0 bg-opacity-0' 
+            : 'opacity-50 bg-opacity-50'
+        }`}
         onClick={handleCloseWithAnimation}
       />
       <div 
